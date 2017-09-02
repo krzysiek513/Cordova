@@ -8,16 +8,8 @@
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
-        // Obsługa zdarzeń wstrzymywania i wznawiania działania oprogramowania Cordova
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-        
-        // TODO: Załadowano oprogramowanie Cordova. Wykonaj tutaj wszystkie wymagane kroki inicjowania tego oprogramowania.
-        var parentElement = document.getElementById('deviceready');
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        getWeatherWithGeoLocation();
+        $('#get-weather-btn').click(getWeatherWithZipCode);
     };
 
     function onPause() {
